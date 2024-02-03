@@ -77,4 +77,4 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
 });
 
 \Illuminate\Support\Facades\Auth::routes();
-Route::redirect('/register', '/login');
+//Route::redirect('/register', '/login');
