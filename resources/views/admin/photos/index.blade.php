@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         <div class="card-body row">
-                            @foreach($photos->chunk($photos->count()/2) as $photo_part)
+                            @foreach($photos->chunk(ceil($photos->count()/2)) as $photo_part)
                                 <table class="table col-6">
                                     <thead>
                                     <tr>
