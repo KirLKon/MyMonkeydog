@@ -9,7 +9,7 @@
     <link rel="alternate" hreflang="x-default" href="https://mymonkeydog.com/"/>
     <link rel="alternate" hreflang="ru" href="https://mymonkeydog.com/ru"/>
     <link rel="alternate" hreflang="en" href="https://mymonkeydog.com/en"/>
-    <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('assets/images/favicon.ico') }}" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/bootstrap-responsive.min.css') }}" rel="stylesheet">
@@ -42,8 +42,8 @@
                         <div id="flagsForMobile" class="dropdown">
                             <a class="dropbtn">
                                 <picture>
-                                    <source srcset="{{ asset('images/flags/' . app()->getLocale() . '.webp' ) }}">
-                                    <img src="{{ asset('images/flags/' . app()->getLocale() . '.jpg' ) }}"
+                                    <source srcset="{{ asset('assets/images/flags/' . app()->getLocale() . '.webp' ) }}">
+                                    <img src="{{ asset('assets/images/flags/' . app()->getLocale() . '.jpg' ) }}"
                                          class="flagIcon" loading="lazy">
                                 </picture>
                             </a>
@@ -54,8 +54,8 @@
                                             <a href="{{ route('main',['locale' => $lang ]) }}" class="selectLangauge">
                                                 <picture>
                                                     <source
-                                                        srcset="{{ asset('images/flags/' . $lang . '.webp' ) }}">
-                                                    <img src="{{ asset('images/flags/' . $lang . '.jpg' ) }}"
+                                                        srcset="{{ asset('assets/images/flags/' . $lang . '.webp' ) }}">
+                                                    <img src="{{ asset('assets/images/flags/' . $lang . '.jpg' ) }}"
                                                          class="flagIcon" loading="lazy">
                                                 </picture>
                                             </a>
@@ -78,8 +78,8 @@
                                     <a class="dropbtn">
                                         <picture>
                                             <source
-                                                srcset="{{ asset('images/flags/' . app()->getLocale() . '.webp' ) }}">
-                                            <img src="{{ asset('images/flags/' . app()->getLocale() . '.jpg' ) }}"
+                                                srcset="{{ asset('assets/images/flags/' . app()->getLocale() . '.webp' ) }}">
+                                            <img src="{{ asset('assets/images/flags/' . app()->getLocale() . '.jpg' ) }}"
                                                  class="flagIcon" loading="lazy">
                                         </picture>
                                         {{ array_search(app()->getLocale(),config('app.available_locales')) }}
@@ -91,8 +91,8 @@
                                                     <a href="{{ route('main',['locale' => $lang ]) }}" class="selectLangauge">
                                                         <picture>
                                                             <source
-                                                                srcset="{{ asset('images/flags/' . $lang . '.webp' ) }}">
-                                                            <img src="{{ asset('images/flags/' . $lang . '.jpg' ) }}"
+                                                                srcset="{{ asset('assets/images/flags/' . $lang . '.webp' ) }}">
+                                                            <img src="{{ asset('assets/images/flags/' . $lang . '.jpg' ) }}"
                                                                  class="flagIcon" loading="lazy">
                                                         </picture>
                                                         {{ $langKey }}

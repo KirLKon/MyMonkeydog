@@ -8,9 +8,9 @@
                          data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
                         <div class="sl-slide-inner">
                             <picture class="deco">
-                                <source type="image/webp" srcset="{{ asset('images/logo/mmdlogoblack.webp') }}"
+                                <source type="image/webp" srcset="{{ asset('assets/images/logo/mmdlogoblack.webp') }}"
                                         alt="affenpincsher">
-                                <img src="{{ asset('images/logo/mmdlogoblack.png') }}" alt="affenpincsher">
+                                <img src="{{ asset('assets/images/logo/mmdlogoblack.png') }}" alt="affenpincsher">
                             </picture>
                             <h1>{{__('S1_HEAD')}}</h1>
                             <blockquote><p>{{__('S1_TEXT')}}</p><cite>{{__('TAG_NAME')}}</cite></blockquote>
@@ -20,9 +20,9 @@
                          data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
                         <div class="sl-slide-inner">
                             <picture class="deco">
-                                <source type="image/webp" srcset="{{ asset('images/logo/mmdlogogold.webp') }}"
+                                <source type="image/webp" srcset="{{ asset('assets/images/logo/mmdlogogold.webp') }}"
                                         alt="affenpincsher">
-                                <img src="{{ asset('images/logo/mmdlogogold.png') }}" alt="affenpincsher">
+                                <img src="{{ asset('assets/images/logo/mmdlogogold.png') }}" alt="affenpincsher">
                             </picture>
                             <h2>{{__('S2_HEAD')}}</h2>
                             <blockquote><p>{{__('S2_TEXT')}}</p><cite>{{__('TAG_NAME')}}</cite></blockquote>
@@ -32,9 +32,9 @@
                          data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
                         <div class="sl-slide-inner">
                             <picture class="deco">
-                                <source type="image/webp" srcset="{{ asset('images/logo/mmdlogowhite.webp') }}"
+                                <source type="image/webp" srcset="{{ asset('assets/images/logo/mmdlogowhite.webp') }}"
                                         alt="affenpincsher">
-                                <img src="{{ asset('images/logo/mmdlogowhite.png') }}" alt="affenpincsher">
+                                <img src="{{ asset('assets/images/logo/mmdlogowhite.png') }}" alt="affenpincsher">
                             </picture>
                             <h2>{{__('S3_HEAD')}}</h2>
                             <blockquote><p>{{__('S3_TEXT')}}</p><cite>{{__('TAG_NAME')}}</cite></blockquote>
@@ -296,28 +296,28 @@
                         <div class="social-icons-list">
                             <a href="https://t.me/mymonkeydog" class="social-icons" title="Telegram" target="_blank">
                                 <picture>
-                                    <source srcset="{{ asset('images/socials/Telegram.webp') }}">
-                                    <img src="{{ asset('images/socials/Telegram.png') }}" loading="lazy">
+                                    <source srcset="{{ asset('assets/images/socials/Telegram.webp') }}">
+                                    <img src="{{ asset('assets/images/socials/Telegram.png') }}" loading="lazy">
                                 </picture>
                             </a>
                             <a href="viber://chat?number=79024732961" class="social-icons" title="Viber"
                                target="_blank">
                                 <picture>
-                                    <source srcset="{{ asset('images/socials/Viber.webp') }}">
-                                    <img src="{{ asset('images/socials/Viber.png') }}" loading="lazy">
+                                    <source srcset="{{ asset('assets/images/socials/Viber.webp') }}">
+                                    <img src="{{ asset('assets/images/socials/Viber.png') }}" loading="lazy">
                                 </picture>
                             </a>
                             <a href="https://www.instagram.com/mymonkeydog_affenpinscher/" class="social-icons"
                                title="Instagram" target="_blank">
                                 <picture>
-                                    <source srcset="{{ asset('images/socials/Instagram.webp') }}">
-                                    <img src="{{ asset('images/socials/Instagram.png') }}" loading="lazy">
+                                    <source srcset="{{ asset('assets/images/socials/Instagram.webp') }}">
+                                    <img src="{{ asset('assets/images/socials/Instagram.png') }}" loading="lazy">
                                 </picture>
                             </a>
                             <a href="https://vk.com/public188715001" class="social-icons" title="VK" target="_blank">
                                 <picture>
-                                    <source srcset="{{ asset('images/socials/VK.webp') }}">
-                                    <img src="{{ asset('images/socials/VK.png') }}" loading="lazy">
+                                    <source srcset="{{ asset('assets/images/socials/VK.webp') }}">
+                                    <img src="{{ asset('assets/images/socials/VK.png') }}" loading="lazy">
                                 </picture>
                             </a>
                         </div>
@@ -327,14 +327,14 @@
                         <span style="font-size:1.4em;">&#9990;</span> +7 (902) 4732961
 
                         <picture>
-                            <source srcset="{{ asset('images/socials/WhatsApp.webp') }}">
-                            <img class="social-icons-mini" src="{{ asset('images/socials/WhatsApp.png') }}"
+                            <source srcset="{{ asset('assets/images/socials/WhatsApp.webp') }}">
+                            <img class="social-icons-mini" src="{{ asset('assets/images/socials/WhatsApp.png') }}"
                                  loading="lazy">
                         </picture>
                         /
                         <picture>
-                            <source srcset="{{ asset('images/socials/Viber.webp') }}">
-                            <img class="social-icons-mini" src="{{ asset('images/socials/Viber.png') }}" loading="lazy">
+                            <source srcset="{{ asset('assets/images/socials/Viber.webp') }}">
+                            <img class="social-icons-mini" src="{{ asset('assets/images/socials/Viber.png') }}" loading="lazy">
                         </picture>
                         Web: mymonkeydog.com
                     </div>
@@ -399,8 +399,8 @@
                     <div class="span3">
                         <div class="picture">
                             <picture>
-                                <source srcset="{{ asset('images/childs/1.webp') }}">
-                                <img class="sc-childs-img img" src="{{ asset('images/childs/1.jpg') }}"
+                                <source srcset="{{ asset('assets/images/childs/1.webp') }}">
+                                <img class="sc-childs-img img" src="{{ asset('assets/images/childs/1.jpg') }}"
                                      alt="affenpincsher" loading="lazy">
                             </picture>
                         </div>
@@ -408,8 +408,8 @@
                     <div class="span3">
                         <div class="picture">
                             <picture>
-                                <source srcset="{{ asset('images/childs/2.webp') }}">
-                                <img class="sc-childs-img img" src="{{ asset('images/childs/2.jpg') }}"
+                                <source srcset="{{ asset('assets/images/childs/2.webp') }}">
+                                <img class="sc-childs-img img" src="{{ asset('assets/images/childs/2.jpg') }}"
                                      alt="affenpincsher" loading="lazy">
                             </picture>
                         </div>
@@ -417,8 +417,8 @@
                     <div class="span3">
                         <div class="picture">
                             <picture>
-                                <source srcset="{{ asset('images/childs/3.webp') }}">
-                                <img class="sc-childs-img img" src="{{ asset('images/childs/3.jpg') }}"
+                                <source srcset="{{ asset('assets/images/childs/3.webp') }}">
+                                <img class="sc-childs-img img" src="{{ asset('assets/images/childs/3.jpg') }}"
                                      alt="affenpincsher" loading="lazy">
                             </picture>
                         </div>
@@ -426,8 +426,8 @@
                     <div class="span3">
                         <div class="picture">
                             <picture>
-                                <source srcset="{{ asset('images/childs/4.webp') }}">
-                                <img class="sc-childs-img img" src="{{ asset('images/childs/4.jpg') }}"
+                                <source srcset="{{ asset('assets/images/childs/4.webp') }}">
+                                <img class="sc-childs-img img" src="{{ asset('assets/images/childs/4.jpg') }}"
                                      alt="affenpincsher" loading="lazy">
                             </picture>
                         </div>
@@ -456,28 +456,28 @@
                         <div>
                             <a href="https://t.me/mymonkeydog" class="social-icons" title="Telegram" target="_blank">
                                 <picture>
-                                    <source srcset="{{ asset('images/socials/Telegram.webp') }}">
-                                    <img src="{{ asset('images/socials/Telegram.png') }}" loading="lazy">
+                                    <source srcset="{{ asset('assets/images/socials/Telegram.webp') }}">
+                                    <img src="{{ asset('assets/images/socials/Telegram.png') }}" loading="lazy">
                                 </picture>
                             </a>
                             <a href="viber://chat?number=79024732961" class="social-icons" title="Viber"
                                target="_blank">
                                 <picture>
-                                    <source srcset="{{ asset('images/socials/Viber.webp') }}">
-                                    <img src="{{ asset('images/socials/Viber.png') }}" loading="lazy">
+                                    <source srcset="{{ asset('assets/images/socials/Viber.webp') }}">
+                                    <img src="{{ asset('assets/images/socials/Viber.png') }}" loading="lazy">
                                 </picture>
                             </a>
                             <a href="https://www.instagram.com/mymonkeydog_affenpinscher/" class="social-icons"
                                title="Instagram" target="_blank">
                                 <picture>
-                                    <source srcset="{{ asset('images/socials/Instagram.webp') }}">
-                                    <img src="{{ asset('images/socials/Instagram.png') }}" loading="lazy">
+                                    <source srcset="{{ asset('assets/images/socials/Instagram.webp') }}">
+                                    <img src="{{ asset('assets/images/socials/Instagram.png') }}" loading="lazy">
                                 </picture>
                             </a>
                             <a href="https://vk.com/public188715001" class="social-icons" title="VK" target="_blank">
                                 <picture>
-                                    <source srcset="{{ asset('images/socials/VK.webp') }}">
-                                    <img src="{{ asset('images/socials/VK.png') }}" loading="lazy">
+                                    <source srcset="{{ asset('assets/images/socials/VK.webp') }}">
+                                    <img src="{{ asset('assets/images/socials/VK.png') }}" loading="lazy">
                                 </picture>
                             </a>
                         </div>

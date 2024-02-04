@@ -848,14 +848,14 @@ html[xmlns] .slides {display: block;}
 }
 
 .flex-direction-nav .flex-next {
-	background-image: url(/images/slider-control-right.png);
+	background-image: url(/assets/images/slider-control-right.png);
 	background-repeat: no-repeat;
 	background-position: 52% 50%;
 }
 
 .flex-direction-nav .flex-prev {
 	margin-right: 36px;
-	background-image: url(/images/slider-control-left.png);
+	background-image: url(/assets/images/slider-control-left.png);
 	background-repeat: no-repeat;
 	background-position: 48% 50%;
 }
