@@ -13,11 +13,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/bootstrap-responsive.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/style.css?v2') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/slider1.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/slider2.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/slider3.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/mmd.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/mmd.css?v2') }}" rel="stylesheet">
     <script type="text/javascript" src="{{ asset('assets/js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/modernizr.custom.79639.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/jquery.ba-cond.min.js') }}"></script>
