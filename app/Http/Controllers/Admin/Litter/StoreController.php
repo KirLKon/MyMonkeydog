@@ -22,6 +22,6 @@ class StoreController extends Controller
         }
 
         $litter = Litter::firstOrCreate($data);
-        return redirect()->route('admin.litter');
+        return redirect()->route('admin.litters');
     }
 }
