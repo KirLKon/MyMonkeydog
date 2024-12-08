@@ -116,12 +116,6 @@
 <script type="text/javascript" src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/flexslider.js') }}" defer></script>
 <script type="text/javascript" src="{{ asset('assets/js/custom.js') }}" defer></script>
-<script>
-    function showpic(current, next) {
-        $('#' + current).hide();
-        $('#' + next).fadeIn(1000)
-    }
-</script>
 <footer>
     <div id="copyright">MymonkeyDog &copy; {{ date(('Y')) }} </div>
 </footer>

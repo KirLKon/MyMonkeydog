@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\Dog;
 use App\Http\Controllers\Admin\Litter;
 use App\Http\Controllers\Admin\Puppy;
 use App\Http\Controllers\Admin\Photo;
+use App\Http\Controllers\Admin\VkPost;
 
 
 /*
@@ -72,6 +73,12 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
         Route::post('/store', [Photo\StoreController::class, '__invoke'])->name('admin.photo.store');
         Route::patch('/{photo}/update_show_on_site', [Photo\UpdateShowOnSiteController::class, '__invoke'])->name('admin.photo.update_show_on_site');
         Route::patch('/{photo}/change_order/{new_order_number}', [Photo\ChangeOrderController::class, '__invoke'])->name('admin.photo.change_order');
+    });
+
+    Route::group(['namespace' => 'VkPost', 'prefix' => 'vk_post'], function () {
+        Route::get('/', [VkPost\IndexController::class, '__invoke'])->name('admin.vk_post');
+        Route::patch('/{vkPost}/update_show_on_site', [VkPost\UpdateShowOnSiteController::class, '__invoke'])->name('admin.vk_post.update_show_on_site');
+
     });
 
 });

@@ -144,10 +144,12 @@
                                                                  alt="{{ __('AFFEN_PUPPY_ALT') }}"
                                                                  src="{{ asset('storage/images/' . $puppy->image_path . '/' . $puppy_additional_image->image_name . '.jpg') }}"
                                                                  loading="lazy">
-                                                            <div class="nextPhotoPleaseBlockPrevPuppy" onclick="showpic('{{ $puppy_additional_image->image_name }}','{{ (isset($puppy->puppy_additional_images[$puppy_additional_image_key-1])) ? $puppy->puppy_additional_images[$puppy_additional_image_key-1]->image_name : $puppy->main_image }}')">
+                                                            <div class="nextPhotoPleaseBlockPrevPuppy"
+                                                                 onclick="showpic('{{ $puppy_additional_image->image_name }}','{{ (isset($puppy->puppy_additional_images[$puppy_additional_image_key-1])) ? $puppy->puppy_additional_images[$puppy_additional_image_key-1]->image_name : $puppy->main_image }}')">
                                                                 <div class="prevPhotoPlease"></div>
                                                             </div>
-                                                            <div class="nextPhotoPleaseBlockNextPuppy" onclick="showpic('{{ $puppy_additional_image->image_name }}','{{ (isset($puppy->puppy_additional_images[$puppy_additional_image_key+1])) ? $puppy->puppy_additional_images[$puppy_additional_image_key+1]->image_name : $puppy->main_image }}')">
+                                                            <div class="nextPhotoPleaseBlockNextPuppy"
+                                                                 onclick="showpic('{{ $puppy_additional_image->image_name }}','{{ (isset($puppy->puppy_additional_images[$puppy_additional_image_key+1])) ? $puppy->puppy_additional_images[$puppy_additional_image_key+1]->image_name : $puppy->main_image }}')">
                                                                 <div class="nextPhotoPlease"></div>
                                                             </div>
                                                         </picture>
@@ -227,7 +229,8 @@
                                             <source
                                                 srcset="{{ asset('storage/images/' . $photo->image_path . '/' . $photo->image_name . '.webp') }}">
                                             <img
-                                                 src="{{ asset('storage/images/' . $photo->image_path . '/' . $photo->image_name . '.jpg') }}" loading="lazy">
+                                                src="{{ asset('storage/images/' . $photo->image_path . '/' . $photo->image_name . '.jpg') }}"
+                                                loading="lazy">
                                         </picture>
                                     </div>
                                 </li>
@@ -334,7 +337,8 @@
                         /
                         <picture>
                             <source srcset="{{ asset('assets/images/socials/Viber.webp') }}">
-                            <img class="social-icons-mini" src="{{ asset('assets/images/socials/Viber.png') }}" loading="lazy">
+                            <img class="social-icons-mini" src="{{ asset('assets/images/socials/Viber.png') }}"
+                                 loading="lazy">
                         </picture>
                         Web: mymonkeydog.com
                     </div>
@@ -359,11 +363,14 @@
                                                 <picture class="picture">
                                                     <source
                                                         srcset="{{ asset('storage/images/' . $dog->image_path . '/' . $dog->main_image . '.webp') }}">
-                                                    <img class="pupPic" alt="{{ __('AFFEN_PUPPY_ALT') }}"  src="{{ asset('storage/images/' . $dog->image_path . '/' . $dog->main_image . '.jpg') }}" loading="lazy">
+                                                    <img class="pupPic" alt="{{ __('AFFEN_PUPPY_ALT') }}"
+                                                         src="{{ asset('storage/images/' . $dog->image_path . '/' . $dog->main_image . '.jpg') }}"
+                                                         loading="lazy">
                                                 </picture>
                                             </div>
                                             <div class="team-name">{{ $dog->name }}</div>
-                                            <div class="position">{{ $sexs[app()->getLocale()][$dog->sex] }}, {{ date("d.m.Y", strtotime($dog->dob)) }}</div>
+                                            <div class="position">{{ $sexs[app()->getLocale()][$dog->sex] }}
+                                                , {{ date("d.m.Y", strtotime($dog->dob)) }}</div>
                                             <p>{{ $dog->ranks }}</p>
                                         </div>
                                     @endforeach
@@ -436,11 +443,76 @@
             </div>
         </div>
     </div>
+
     <div id="news" class="color white">
         <div class="container">
             <div class="wrapper span12">
                 <div id="page-title">
                     <div id="page-title-inner"><h2><span>{{ __('NEWS') }}</span></h2></div>
+                    @foreach($vkPosts->chunk(3) as $vkPostRow)
+                        <div class="row-fluid news">
+                            @foreach($vkPostRow as $vkPost)
+                                <div class="span4">
+                                    @if ($vkPost->media->count() > 0)
+                                        <div class="avatar" id="vk_image_{{ $vkPost->media->first()->id }}">
+                                            <picture class="picture">
+                                                <img class="vk_image"
+                                                     alt="mymonkeydog"
+                                                     src="{{ $vkPost->media->first()->url }}"
+                                                     loading="lazy">
+                                                @if ($vkPost->media->count() > 1)
+                                                    <div class="nextPhotoPleaseBlockPrevPuppy"
+                                                         onclick="showpic('vk_image_{{ $vkPost->media->first()->id }}','vk_image_{{ $vkPost->media->first()->previous()->id }}')">
+                                                        <div class="prevPhotoPlease"></div>
+                                                    </div>
+                                                    <div class="nextPhotoPleaseBlockNextPuppy"
+                                                         onclick="showpic('vk_image_{{ $vkPost->media->first()->id }}','vk_image_{{ $vkPost->media->first()->next()->id }}')">
+                                                        <div class="nextPhotoPlease"></div>
+                                                    </div>
+                                                @endif
+                                            </picture>
+                                        </div>
+                                    @endif
+                                    @if ($vkPost->media->count() > 1)
+                                        @foreach($vkPost->media->where('id','>',$vkPost->media->first()->id)->all() as $media)
+                                            <div class="avatar" style="display:none;"
+                                                 id="vk_image_{{ $media->id }}">
+                                                <picture class="picture">
+                                                    <img class="vk_image"
+                                                         alt="mymonkeydog"
+                                                         src="{{ $media->url }}"
+                                                         loading="lazy">
+                                                    <div class="nextPhotoPleaseBlockPrevPuppy"
+                                                         onclick="showpic('vk_image_{{ $media->id }}','vk_image_{{ $media->previous()->id }}')">
+                                                        <div class="prevPhotoPlease"></div>
+                                                    </div>
+                                                    <div class="nextPhotoPleaseBlockNextPuppy"
+                                                         onclick="showpic('vk_image_{{ $media->id }}','vk_image_{{ $media->next()->id }}')">
+                                                        <div class="nextPhotoPlease"></div>
+                                                    </div>
+                                                </picture>
+                                            </div>
+                                        @endforeach
+                                    @endif
+                                    <p>
+                                        {{ mb_substr(urldecode($vkPost->text),0,125) }}
+                                        <span id="dots_for_{{ $vkPost->id }}">...</span>
+                                        <span class="more" id="more_for_{{ $vkPost->id }}">
+                                            {{ mb_substr(urldecode($vkPost->text),125) }}
+                                            <br>
+                                            <a href="https://vk.com/public188715001?w=wall-188715001_{{ $vkPost->vkontakte_post_id }}">{{ __('LINK_TO_VK_POST') }}</a>
+                                        </span>
+                                    </p>
+                                    <button class="read_more_less" onclick="show_more({{ $vkPost->id }},'show')"
+                                            id="read_more_btn_{{ $vkPost->id }}">{{ __('READ_MORE') }}</button>
+                                    <button class="read_more_less read_less"
+                                            onclick="show_more({{ $vkPost->id }}, 'hide')"
+                                            id="read_less_btn_{{ $vkPost->id }}">{{ __('READ_LESS') }}</button>
+
+                                </div>
+                            @endforeach
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -487,5 +559,4 @@
             </div>
         </div>
     </div>
-
 @endsection

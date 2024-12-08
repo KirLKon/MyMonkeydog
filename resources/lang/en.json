@@ -62,6 +62,8 @@
     "PUPPIES_FOR_SALE": "AFFENPINSCHER PUPPY FOR SALE",
     "AVAIL_FOR_RESERVE": "available for reserve",
     "NOT_AVAIL_FOR_RESERVE": "reserved",
-    "AFFEN_PUPPY_ALT": "affenpinscher puppy mymonkeydog"
-
+    "AFFEN_PUPPY_ALT": "affenpinscher puppy mymonkeydog",
+    "READ_MORE": "Read more",
+    "READ_LESS": "Read less",
+    "LINK_TO_VK_POST": "Original post in Vk"
 }

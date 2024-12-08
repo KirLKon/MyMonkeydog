@@ -98,6 +98,14 @@
                             </p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.vk_post') }}" class="nav-link {{ (request()->is('admin/vk_post*')) ? 'active' : '' }}">
+                            <i class="nav-icon fa fa-clipboard"></i>
+                            <p>
+                                Посты в Вк
+                            </p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->

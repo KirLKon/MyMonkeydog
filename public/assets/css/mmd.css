@@ -27,3 +27,9 @@
 #home img{aspect-ratio: 260/279;}
 #puppies img {aspect-ratio: 3/2;}
 #portfolio img {aspect-ratio: 3/2;}
+.row-fluid.news, .span4{margin-top: 1em}
+.more {display: none;}
+.read_less{display: none;}
+.read_more_less{background: #5ac2ce;color: #fff;border: none;padding: 7px;font-size: 1em;font-weight: bold;}
+.vk_image{object-fit: cover;width: 100%;height: 20em!important;aspect-ratio: 1;border-radius: 25px;}
+.avatar{width:100%}

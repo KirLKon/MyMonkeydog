@@ -64,5 +64,8 @@
     "PUPPIES_FOR_SALE": "КУПИТЬ ЩЕНКА АФФЕНПИНЧЕРА",
     "AVAIL_FOR_RESERVE": "открыт для резерва",
     "NOT_AVAIL_FOR_RESERVE": "в резерве",
-    "AFFEN_PUPPY_ALT": "щенок аффенпинчера mymonkeydog"
+    "AFFEN_PUPPY_ALT": "щенок аффенпинчера mymonkeydog",
+    "READ_MORE": "Показать весь текст",
+    "READ_LESS": "Скрыть",
+    "LINK_TO_VK_POST": "Оригинальный пост в ВК"
 }
