@@ -80,8 +80,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
         Route::get('/', [VkPost\IndexController::class, '__invoke'])->name('admin.vk_post');
         Route::patch('/{vkPost}/update_show_on_site', [VkPost\UpdateShowOnSiteController::class, '__invoke'])->name('admin.vk_post.update_show_on_site');
     });
-    Route::group(['namespace' => 'PuppyRequest', 'prefix' => 'puppy_request'], function () {
-        Route::get('/', [PuppyRequest\IndexController::class, '__invoke'])->name('admin.puppy_request');
+    Route::group(['namespace' => 'PuppyRequest', 'prefix' => 'puppies_request'], function () {
+        Route::get('/', [PuppyRequest\IndexController::class, '__invoke'])->name('admin.puppies_request');
     });
 
 });

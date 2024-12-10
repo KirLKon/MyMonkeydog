@@ -107,7 +107,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('admin.puppy_request') }}" class="nav-link {{ (request()->is('admin/puppy_request*')) ? 'active' : '' }}">
+                        <a href="{{ route('admin.puppies_request') }}" class="nav-link {{ (request()->is('admin/puppies_request*')) ? 'active' : '' }}">
                             <i class="nav-icon fa fa-question"></i>
                             <p>
                                 Запросы по щенкам
