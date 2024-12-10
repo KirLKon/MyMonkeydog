@@ -65,5 +65,13 @@
     "AFFEN_PUPPY_ALT": "affenpinscher puppy mymonkeydog",
     "READ_MORE": "Read more",
     "READ_LESS": "Read less",
-    "LINK_TO_VK_POST": "Original post in Vk"
+    "LINK_TO_VK_POST": "Original post in Vk",
+    "ASK_QUESTION": "Request for Affenpinscher puppy",
+    "PUPPY": "Puppy",
+    "YOUR_EMAIL": "Your email",
+    "YOUR_NAME": "Your name",
+    "YOUR_QUESTION": "Message",
+    "SEND_MESSAGE": "Send message",
+    "CHOOSE_PUPPY": "General request or choose puppy from the list below",
+    "MESSAGE_SENT": "Your message has been sent. We will reply you as soon as possible!"
 }

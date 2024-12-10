@@ -33,3 +33,10 @@
 .read_more_less{background: #5ac2ce;color: #fff;border: none;padding: 7px;font-size: 1em;font-weight: bold;}
 .vk_image{object-fit: cover;width: 100%;height: 20em!important;aspect-ratio: 1;border-radius: 25px;}
 .avatar{width:100%}
+.form-group{width: 100%;display: grid;margin-top: .5em}
+input, textarea, select{background: rgba(91, 194, 207, 0.25);width: 100%;padding: 5px;font-size: 16px;border: 1px solid #5bc2ce;height: 34px;border-radius: 5px;}
+textarea {height: unset;}
+.form-group button {max-width: 250px;}
+.success-message-sent{position: fixed;top: 25%;width: 25%;background: color(srgb 0.3547 0.7622 0.8085);right: 0px;z-index: 999;padding: 10px;color: white;font-weight: bold;min-width: 250px;}
+.success-message-sent-close{padding: 3px;font-size: 1.5em;font-weight: bold;border: none;background-color: transparent;position: absolute;right: 10px;top: 10px;}
+.text-sm{margin-right: 10px}

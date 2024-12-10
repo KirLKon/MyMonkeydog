@@ -6,7 +6,7 @@ use App\Http\Controllers\Admin\Litter;
 use App\Http\Controllers\Admin\Puppy;
 use App\Http\Controllers\Admin\Photo;
 use App\Http\Controllers\Admin\VkPost;
-
+use App\Http\Controllers\Admin\PuppyRequest;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +21,7 @@ use App\Http\Controllers\Admin\VkPost;
 
 Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'], 'middleware' => 'setlocale'], function () {
     Route::get('/', [\App\Http\Controllers\SiteController::class,'__invoke'])->name('main');
+    Route::post('/puppy_request', [\App\Http\Controllers\PuppyRequest\StoreController::class,'__invoke'])->name('puppy_request');
 });
 
 Route::group(['prefix' => '', 'middleware' => 'detectlocale'], function () {
@@ -78,7 +79,9 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
     Route::group(['namespace' => 'VkPost', 'prefix' => 'vk_post'], function () {
         Route::get('/', [VkPost\IndexController::class, '__invoke'])->name('admin.vk_post');
         Route::patch('/{vkPost}/update_show_on_site', [VkPost\UpdateShowOnSiteController::class, '__invoke'])->name('admin.vk_post.update_show_on_site');
-
+    });
+    Route::group(['namespace' => 'PuppyRequest', 'prefix' => 'puppy_request'], function () {
+        Route::get('/', [PuppyRequest\IndexController::class, '__invoke'])->name('admin.puppy_request');
     });
 
 });

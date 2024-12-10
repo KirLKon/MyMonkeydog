@@ -1,5 +1,11 @@
 @extends('layouts.site')
 @section('content')
+    @if (session('success'))
+        <div class="success-message-sent">
+            <button type="button" class="success-message-sent-close" data-dismiss="alert" aria-hidden="true">×</button>
+            <div class="text-sm">{{ session('success') }}</div>
+        </div>
+    @endif
     <div id="home">
         <div class="demo-1">
             <div id="slider" class="sl-slider-wrapper">
@@ -112,7 +118,7 @@
                                     <div class="row-fluid">
                                         @foreach($in_row as $puppy)
                                             <div class="{{ $litter->get_litter_in_row_style() }}">
-                                                <div class="avatar">
+                                                <div class="avatar" id="{{ $puppy->main_image }}">
                                                     <picture class="picture" id="{{ $puppy->main_image }}">
                                                         <source
                                                             srcset="{{ asset('storage/images/' . $puppy->image_path . '/' . $puppy->main_image . '.webp') }}">
@@ -168,8 +174,64 @@
                                         @endforeach
                                     </div>
                                 @endforeach
+
                             @endforeach
                         @endif
+                        <div class="row-fluid">
+                            <div class="team-name"
+                                 style="text-transform: uppercase">{{__('ASK_QUESTION')}}</div>
+                            <div class="span2"></div>
+                            <div class="span8">
+                                <form method="POST"
+                                      action="{{ route('puppy_request', ['locale' => app()->getLocale()]) }}">
+                                    @csrf
+                                    <div class="form-group">
+                                        <div class="styled-select">
+                                            <select name="puppy_id" required>
+                                                <option value="0">{{ __('CHOOSE_PUPPY') }}</option>
+                                                @foreach($litters as $litter)
+                                                    @foreach($litter->get_puppies->where('available',1) as $puppy)
+                                                        <option
+                                                            value="{{ $puppy->id }}" {{ (old('puppy_id') == $puppy->id) ? 'selected' : '' }}>{{ $puppy->name }}
+                                                            ({{ \App\Models\Puppy::puppyColors()[app()->getLocale()][$puppy->color] }}
+                                                            )
+                                                        </option>
+                                                    @endforeach
+                                                @endforeach
+                                            </select>
+                                            @error('puppy_id')
+                                            <div class="alert-danger">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="name" placeholder="{{__('YOUR_NAME')}}"
+                                               value="{{ old('name') }}"
+                                               required>
+                                        @error('name')
+                                        <div class="alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" name="email" placeholder="{{__('YOUR_EMAIL')}}"
+                                               value="{{ old('email') }}"
+                                               required>
+                                        @error('email')
+                                        <div class="alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                                    <textarea name="message" rows="7"
+                                                              placeholder="{{__('YOUR_QUESTION')}}">{{ old('message') }}</textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="read_more_less"
+                                                type="submit">{{ __('SEND_MESSAGE') }}</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="span2"></div>
+                        </div>
                     </div>
                 </div>
             </div>
