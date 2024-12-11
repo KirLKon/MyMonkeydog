@@ -17,9 +17,9 @@ class PuppyRequestMessage extends Mailable
     public function __construct(PuppyRequest $puppyRequest)
     {
         $this->subject = __('REQUEST_FOR_PUPPY');
-        $this->message = __('Name: ') . ': ' . $puppyRequest->name ;
-        $this->message .= '<br>' . __('mail: ') . ': ' . $puppyRequest->email ;
-        $this->message .= '<br>---'. __('YOUR_QUESTION: ') .'---<br>' . $puppyRequest->message;
+        $this->message = __('NAME') . ': ' . $puppyRequest->name ;
+        $this->message .= '<br>email: ' . $puppyRequest->email ;
+        $this->message .= '<br>---'. __('YOUR_QUESTION') .'---<br>' . $puppyRequest->message;
 
     }
 
