@@ -8,6 +8,6 @@
 </head>
 <body
     style="margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;color:rgb(43, 42, 41);padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;outline-style:none;outline-width:medium;font-family:Arial;cursor:auto;background: #ffffff;">
-<?php $message; ?>
+<?php echo $message; ?>
 </body>
 </html>
