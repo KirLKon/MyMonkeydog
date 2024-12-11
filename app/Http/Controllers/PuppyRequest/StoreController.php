@@ -16,7 +16,7 @@ class StoreController extends Controller
         $data = $request->validated();
         if (empty($data['puppy_id'])) unset($data['puppy_id']);
         $puppyRequest = PuppyRequest::create($data);
-        Mail::mailer('smtp')->to($puppyRequest->email)->send(new PuppyRequestMessage($puppyRequest));
+        Mail::mailer('smtp')->to(env('MAIL_OWNER_ADDRESS'))->send(new PuppyRequestMessage($puppyRequest));
         return redirect()->to(URL::previous() . "#puppies")->withSuccess(__('MESSAGE_SENT'));
     }
 }
