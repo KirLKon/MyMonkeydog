@@ -73,5 +73,7 @@
     "YOUR_QUESTION": "Message",
     "SEND_MESSAGE": "Send message",
     "CHOOSE_PUPPY": "General request or choose puppy from the list below",
-    "MESSAGE_SENT": "Your message has been sent. We will reply you as soon as possible!"
+    "MESSAGE_SENT": "Your message has been sent. We will reply you as soon as possible!",
+    "REQUEST_FOR_PUPPY": "Request for puppy",
+    "NAME": "Name"
 }
