@@ -42,7 +42,8 @@
                         <div id="flagsForMobile" class="dropdown">
                             <a class="dropbtn">
                                 <picture>
-                                    <source srcset="{{ asset('assets/images/flags/' . app()->getLocale() . '.webp' ) }}">
+                                    <source
+                                        srcset="{{ asset('assets/images/flags/' . app()->getLocale() . '.webp' ) }}">
                                     <img src="{{ asset('assets/images/flags/' . app()->getLocale() . '.jpg' ) }}"
                                          class="flagIcon" loading="lazy">
                                 </picture>
@@ -79,8 +80,9 @@
                                         <picture>
                                             <source
                                                 srcset="{{ asset('assets/images/flags/' . app()->getLocale() . '.webp' ) }}">
-                                            <img src="{{ asset('assets/images/flags/' . app()->getLocale() . '.jpg' ) }}"
-                                                 class="flagIcon" loading="lazy">
+                                            <img
+                                                src="{{ asset('assets/images/flags/' . app()->getLocale() . '.jpg' ) }}"
+                                                class="flagIcon" loading="lazy">
                                         </picture>
                                         {{ array_search(app()->getLocale(),config('app.available_locales')) }}
                                     </a>
@@ -88,12 +90,14 @@
                                         @foreach(config('app.available_locales') as $langKey => $lang)
                                             @if(app()->getLocale() != $lang)
                                                 <li>
-                                                    <a href="{{ route('main',['locale' => $lang ]) }}" class="selectLangauge">
+                                                    <a href="{{ route('main',['locale' => $lang ]) }}"
+                                                       class="selectLangauge">
                                                         <picture>
                                                             <source
                                                                 srcset="{{ asset('assets/images/flags/' . $lang . '.webp' ) }}">
-                                                            <img src="{{ asset('assets/images/flags/' . $lang . '.jpg' ) }}"
-                                                                 class="flagIcon" loading="lazy">
+                                                            <img
+                                                                src="{{ asset('assets/images/flags/' . $lang . '.jpg' ) }}"
+                                                                class="flagIcon" loading="lazy">
                                                         </picture>
                                                         {{ $langKey }}
                                                     </a>
@@ -116,6 +120,29 @@
 <script type="text/javascript" src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/flexslider.js') }}" defer></script>
 <script type="text/javascript" src="{{ asset('assets/js/custom.js') }}" defer></script>
+<link href="{{ asset('assets/css/GlobeStyle.css') }}" rel="stylesheet">
+
+
+<script type="text/javascript">
+
+    window.onload = function () {
+        $.getScript("/assets/js/dogsOnMap.js", function () {
+            $.getScript("/assets/js/miniature.earth.js", function () {})
+        });
+    }
+    window.addEventListener( "earthjsload", function() {
+
+        myearth = new Earth( 'myearth', {location: { lat: 35, lng: 80 },light: 'none',mapLandColor : '#fff',mapSeaColor : '#66d8ff',mapBorderColor : '#66d8ff',mapBorderWidth : 0.04,autoRotate: true,autoRotateSpeed: 1.1,autoRotateDelay: 2000,} );
+
+        myearth.addEventListener( "ready", function() {for ( var i=0; i < dogs.length; i++ ) {var marker = this.addMarker( {mesh : ["Pin","Needle"],color: '#00a8ff',color2: '#9f9f9f',offset: -0.2,location : { lat: dogs[i][2], lng: dogs[i][3] },scale: 0.01,visible: false,hotspot: true,hotspotRadius : 0.4,hotspotHeight : 1.5,index: i,dogName : dogs[i][0],dogPlace : dogs[i][1]['{{ app()->getLocale() }}'],dogPhoto : dogs[i][4]} );
+            marker.addEventListener('mouseover', function() {if (this.color !== '#ffff00') {document.getElementById('tip-layer').style.opacity = 1;document.getElementById('globeDogPhoto').src = "assets/images/pics/"+this.dogPhoto;document.getElementById('tip-big').innerHTML = this.dogName;document.getElementById('tip-small').innerHTML = this.dogPlace.split(',').join('<br>');this.color = 'red';}});
+            marker.addEventListener('mouseout', function() {if (this.color !== '#ffff00') {document.getElementById('tip-layer').style.opacity = 0;this.color = '#00a8ff';}});
+            marker.addEventListener('click', function() {for (i=0;i<markers.length;i++) {markers[i].color = '#00a8ff';if (markers[i].dogName==this.dogName) {document.getElementById('tip-layer').style.opacity = 1;document.getElementById('globeDogPhoto').src = "assets/images/pics/"+this.dogPhoto;document.getElementById('tip-big').innerHTML = this.dogName;document.getElementById('tip-small').innerHTML = this.dogPlace.split(',').join('<br>');markers[i].color = 'yellow';}}selectStartMarker( this );});
+            markers.push( marker );
+        }restorePins();} );
+    } );
+
+</script>
 <footer>
     <div id="copyright">MymonkeyDog &copy; {{ date(('Y')) }} </div>
 </footer>

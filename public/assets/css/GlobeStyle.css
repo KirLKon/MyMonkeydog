@@ -1,0 +1,100 @@
+#mapBlock {
+    
+    top:-4em;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-webkit-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	align-items: center;
+	
+	position: relative;
+	margin: 0 auto;
+	width: 90%;
+	max-width: 90%;
+	transition: width 0.5s ease-in-out;
+	/*min-height: 100vh;*/
+	font-family: monospace;
+}
+
+#mainMapcol {
+	flex: 1 1 70vw;
+	margin-bottom:-5rem;
+	/*flex:auto;*/
+}
+
+#myearth::after {
+	content: "";
+	position: absolute;
+	top: 11.9%;
+	left: 11.9%;
+	right: 11.9%;
+	bottom: 11.9%;
+	border-radius: 50%;
+	background-color: #66d8ff;
+}
+
+#tip-layer {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 15%;
+	/*right: 40%;*/
+	bottom: 30%;
+	/*height:10rem;*/
+	border-radius: 5%;
+	width:67%;
+	background-color: RGBA(0,0,0,0.6);
+	color: white;
+	user-select: none;
+	pointer-events: none;
+	z-index: 5000;
+	transition: opacity 0.25s ease;
+	opacity: 0;
+	
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	-webkit-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	align-items: center;
+	text-align: center;
+}
+
+#tip-big {
+    width:70%;
+	font-size: 1.3em;
+	letter-spacing: 0.05em;
+	top: 10%;
+    position: absolute;
+    left: 27%;
+}
+#globeDogPhoto{
+    position: absolute;
+    top: 7%;
+    left: 3%;
+    border-radius: 5px;
+        max-width: 25%;
+}
+#tip-small{
+    width:60%;
+    position: absolute;
+    /*top: 10%;*/
+    left: 30%;
+}
+
+@media (max-width: 999px) {
+	#tip-layer > div {
+		/*font-size: 2vw;*/
+		    font-size: 0.4rem;
+    line-height: initial;
+	}
+}

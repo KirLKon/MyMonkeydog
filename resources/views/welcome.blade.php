@@ -449,7 +449,7 @@
                 </div>
                 <div id="mapBlock">
                     <div id="mainMapcol">
-
+                        <div id="myearth" class="little-earth"><div id="tip-layer"><div style="width:100%;height:inherit"><img src='' id="globeDogPhoto"><div id="tip-big"></div><div id="tip-small"></div></div></div></div>
                     </div>
                 </div>
             </div>
@@ -621,4 +621,5 @@
             </div>
         </div>
     </div>
+
 @endsection

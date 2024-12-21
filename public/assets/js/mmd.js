@@ -24,3 +24,15 @@ function show_more(post_id, show) {
         moreText.style.display = "none";
     }
 }
+
+var markers = [];
+var plane, X;
+var startMarker, endMarker;
+var dashedLine, solidLine;
+var flightScale = 1;
+function selectStartMarker( marker ) {myearth.goTo( marker.location, { duration: 200, relativeDuration: 300, approachAngle: 20 } );}
+function reset() {document.body.classList.remove( 'config-start' );document.getElementById('tip-layer').style.opacity = 0;if ( plane ) {plane.animate( 'scale', 0.01, { complete : function(){ this.remove(); } } );}if ( X ) {}if ( dashedLine ) {dashedLine.animate( 'width', 0.01, { complete : function(){ this.remove(); } } );}if ( solidLine ) {solidLine.animate( 'width', 0.01, { complete : function(){ this.remove(); } } );}startMarker = false;endMarker = false;restorePins();}
+var pinIndex = 0;
+var pinTime = 0;
+var pinsPerSec = 1000 / 18;
+function restorePins() {pinIndex = 0;pinTime = myearth.deltaTime;var restoreOnePin = function() {pinTime += myearth.deltaTime;if ( pinTime > pinsPerSec ) {pinTime -= pinsPerSec;} else {return;}if ( ! markers[ pinIndex ].visible ) {markers[ pinIndex ].visible = true;markers[ pinIndex ].hotspot = true;markers[ pinIndex ].animate( 'scale', 1, { duration: 560, easing: 'out-back' } );} else {pinTime = pinsPerSec;}if ( ++ pinIndex >= markers.length ) {myearth.removeEventListener( "update", restoreOnePin );}};myearth.addEventListener( "update", restoreOnePin );}
