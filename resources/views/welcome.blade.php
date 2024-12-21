@@ -177,10 +177,21 @@
 
                             @endforeach
                         @endif
+                        <div class="team-name span12"
+                             style="text-transform: uppercase">{{__('ASK_QUESTION')}}</div>
                         <div class="row-fluid">
-                            <div class="team-name"
-                                 style="text-transform: uppercase">{{__('ASK_QUESTION')}}</div>
-                            <div class="span2"></div>
+                            @if (isset( $litter))
+                            <div class="span4">
+                                <picture>
+                                    <source
+                                        srcset="{{ asset('storage/images/' . $litter->image_path . '/' . $litter->presentation_image . '.webp') }}">
+                                    <img class="presentation"
+                                        src="{{ asset('storage/images/' . $litter->image_path . '/' . $litter->presentation_image . '.jpg') }}">
+                                </picture>
+                            </div>
+                            @else
+                                <div class="span2"></div>
+                            @endif
                             <div class="span8">
                                 <form method="POST"
                                       action="{{ route('puppy_request', ['locale' => app()->getLocale()]) }}">
@@ -449,7 +460,14 @@
                 </div>
                 <div id="mapBlock">
                     <div id="mainMapcol">
-                        <div id="myearth" class="little-earth"><div id="tip-layer"><div style="width:100%;height:inherit"><img src='' id="globeDogPhoto"><div id="tip-big"></div><div id="tip-small"></div></div></div></div>
+                        <div id="myearth" class="little-earth">
+                            <div id="tip-layer">
+                                <div style="width:100%;height:inherit"><img src='' id="globeDogPhoto">
+                                    <div id="tip-big"></div>
+                                    <div id="tip-small"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
