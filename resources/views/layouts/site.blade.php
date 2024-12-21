@@ -21,7 +21,7 @@
     <script type="text/javascript" src="{{ asset('assets/js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/modernizr.custom.79639.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/jquery.ba-cond.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/mmd.js?v2') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/mmd.js?v3') }}"></script>
     <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQB9XWRSXC"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQB9XWRSXC"></script>
